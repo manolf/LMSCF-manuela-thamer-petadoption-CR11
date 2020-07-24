@@ -1,0 +1,27 @@
+.card:hover {
+    transform: scale(1.05); }
+  
+.card {
+    margin: 20px 10px 20px 10px;
+    padding: 20px 20px 20px 20px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
+    width: 100%;
+  }
+
+  .icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+
+  .jumbotron{
+    background: url("https://cdn.pixabay.com/photo/2019/09/27/09/43/man-4507976_1280.jpg") no-repeat center center;
+    background-size: 100% 300%;
+}
+  
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }

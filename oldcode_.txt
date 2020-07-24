@@ -1,0 +1,309 @@
+                                <!-- <?php
+                if (!empty($userRow['foto'])) {
+                    echo '<img src='img/icon/$userRow['foto'];'/>';
+                } else {
+                    echo '<img src='img/icon/penguin.jpg'>';
+                }
+                
+                ?>
+
+
+
+
+                    <div class="page-wrapper">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop3 d-none d-lg-block">
+            <div class="section__content section__content--p35">
+                <div class="header3-wrap">
+                    <div class="header__logo">
+                        <a href="#"><i class="fas fa-lock"></i>
+                            <!-- <img src="images/icon/logo-white.png" alt="CoolAdmin" /> -->
+                        </a>
+                        <p>admin</p>
+                    </div>
+                    <div class="header__navbar">
+                        <ul class="list-unstyled">
+                            <li> 
+                                <a href="admin.php">
+                                    <i class="fas fa-home"></i>
+                                    <span class="bot-line"></span>Home</a>
+                            </li>
+
+                            <li>
+                                <a href="create.php">
+                                    <i class="fas fa-magic"></i>
+                                    <span class="bot-line"></span>Add Animal</a>
+                            </li>
+                            <li>
+                                <a href="logout.php?logout">
+                                    <i class="fas  fa-arrow-right"></i>
+                                    <span class="bot-line"></span>Sign out</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                    <div class="header__tool">
+
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix js-item-menu">
+                                <div class="image">
+                                
+                                    <img src="img/icon/<?php echo $userRow['foto']; ?>" />
+                                </div>
+                                <div class="content">
+                                    <?php echo $userRow['userEmail']; ?>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile header-mobile-2 d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="au-breadcrumb-content">
+                                <div class="au-breadcrumb-left">
+                                    <span class="au-breadcrumb-span">You are here:</span>
+                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        <li class="list-inline-item active">
+                                            <a href="#">Home</a>
+                                        </li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">Dashboard</li>
+                                    </ul>
+                                </div>
+                                <form class="au-form-icon--sm" action="" method="post">
+                                    <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
+                                    <button class="au-btn--submit2" type="submit">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-4">Welcome
+                                <span><?php echo $userRow['userEmail']; ?></span>
+                            </h1>
+                            <hr class="line-seprate">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END WELCOME-->
+
+
+
+            <!-- STATISTIC-->
+            <section class="statistic statistic2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--green">
+                                <h2 class="number">4</h2>
+                                <span class="desc">CARS TOTAL</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--orange">
+                                <h2 class="number">2</h2>
+                                <span class="desc">CARS JUST RENT</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--blue">
+                                <h2 class="number">2</h2>
+                                <span class="desc">CARS AVAILABLE</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-calendar-note"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="statistic__item statistic__item--red">
+                                <h2 class="number">2</h2>
+                                <span class="desc">REGISTERED USERS</span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-money"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC-->
+
+
+
+            <!-- DATA TABLE-->
+
+            <!-- END DATA TABLE-->
+
+            <!-- START MAIN CODE -->
+
+            <!-- <div class="container autos row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
+
+            <div class="container row col-md-6 col-lg-3 mx-auto">
+            
+<?php
+$sql = "SELECT * FROM animals
+INNER JOIN address on address.addressID = animals.addressID";
+
+//nicer version
+$result = mysqli_query($conn, $sql);
+// fetch the next row (as long as there are any) into $row
+while ($row = mysqli_fetch_assoc($result)) {
+    $name = $row['name'];
+    $breed = $row['breed'];
+    $image = $row['image'];
+    $string = $row['description'];
+    $location = $row['street'] . ", " . $row['zipcode'] . " " . $row['city'];
+    $hobbies = $row['hobbies'];
+    $dateAvailable = $row['dateAvailable'];
+    $website = $row['website'];
+    $age = $row['age'];
+    $availability = $row['cat'];
+    $animalID = $row['animalID'];
+
+?>
+
+    <div class="col mb-3 ">
+        <div class="card px-1 py-1 bg-light">
+            <h5 class="card-title text-secondary"><?= $breed ?></h5>
+            <img src="img/<?= $image ?>" class="card-img-top vh-40">
+            <div class="card-body">
+                <h3 class="card-text text-success font-weight-bold"><?= $name ?> <span></span></h3>
+                <h6 class="card-text"> <?= $string ?> </>
+                </h6>
+                <?php
+                if (!empty($dateAvailable)) {
+                    echo "<h6 class = 'card-text'><span class='font-weight-bold'>in our home since: </span> $dateAvailable </></h6>";
+                }
+                if (!empty($website)) {
+                    echo "<h6 class = 'card-text'><span class='font-weight-bold'>URL: </span> $website </></h6>";
+                }
+
+                if (!empty($hobbies)) {
+                    echo "<h6 class = 'card-text'><span class='font-weight-bold'>hobbies: </span> $hobbies </></h6>";
+                }
+                if (!empty($age)) {
+                    echo "<h6 class = 'card-text'><span class='font-weight-bold'>age: </span> $age </></h6>";
+                }
+
+                ?>
+                <h7 class="card-text"><span class="font-weight-bold">location:</span> <?= $location ?></h7>
+
+            </div>
+            <div class="card-footer text-center">
+                <a href="delete.php?id=<?= $animalID ?>" class="btn btn-outline-danger  mx-auto">Delete </a>
+                <a href="update.php?id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Update </a>
+ 
+            </div>
+        </div>
+    </div>
+
+<?php
+}
+
+// Free result set
+mysqli_free_result($result);
+// Close connection
+mysqli_close($conn);
+?>
+
+</div>
+
+
+            <!-- END MAIN CODE -->
+
+
+
+            <!-- COPYRIGHT-->
+            <section class="p-t-60 p-b-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2020 Manu. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END COPYRIGHT-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+    <!-- <?php ob_end_flush(); ?> -->
