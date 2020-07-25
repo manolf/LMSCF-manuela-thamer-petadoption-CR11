@@ -45,6 +45,7 @@ if ($_GET['id']) {
 
         <div class="mx-auto">
             <a class="btn btn-outline-success" href="admin.php" role="button">Home</a>
+            <a class="btn btn-outline-warning" href="create.php" role="button">Add Animal</a>
             <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
         </div>
 

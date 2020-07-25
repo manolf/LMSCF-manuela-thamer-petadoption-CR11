@@ -11,6 +11,10 @@ if (isset($_SESSION["user"])) {
     header("Location: home.php");
     exit;
 }
+if (isset($_SESSION["superadmin"])) {
+    header("Location: superadmin.php");
+    exit;
+}
 // select logged-in users details
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
@@ -31,13 +35,20 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-light bg-light">
+<nav class="navbar sticky-top navbar-dark bg-dark">
+        <div><p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p></div>
 
         <div class="mx-auto">
-            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-            <a class="btn btn-outline-success" href="create.php" role="button">Add Medium</a>
-            <a class="btn btn-outline-success" href="createAuthor.php" role="button">Add Author</a>
-            <a class="btn btn-outline-success" href="createPublisher.php" role="button">Add Publisher</a>
+            <a class="btn btn-outline-success" href="admin.php" role="button">Home</a>
+            <a class="btn btn-outline-warning" href="create.php" role="button">Add Animal</a>
+            <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
+        </div>
+
+        <div class="mr-3 text-white">
+            <?php echo $userRow['userEmail']; ?>
+        </div>
+        <div class="image">
+            <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
         </div>
     </nav>
 
@@ -103,7 +114,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
                     <input class="form-control btn btn-outline-success mt-3 mb-3" type="submit" name="submit" value="Insert Medium" />
 
-                    <a href="index.php" class="btn btn-block btn-outline-warning">Back</a>
+                    <a href="admin.php" class="btn btn-block btn-outline-warning">Back</a>
 
         </div>
 

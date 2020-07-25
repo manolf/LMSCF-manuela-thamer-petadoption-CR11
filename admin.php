@@ -42,7 +42,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <div><p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p></div>
 
         <div class="mx-auto">
-            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
+            <a class="btn btn-outline-success" href="admin.php" role="button">Home</a>
             <a class="btn btn-outline-warning" href="create.php" role="button">Add Animal</a>
             <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
         </div>
@@ -95,12 +95,13 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             $age = $row['age'];
             $type = $row['type'];
             $animalID = $row['animalID'];
+            $status = $row['status'];
 
         ?>
 
             <div class="col mb-3 ">
                 <div class="card px-1 py-1 bg-light">
-                    <h5 class="card-title text-secondary"><?= $type ?></h5>
+                    <h5 class="card-title text-secondary"><?= $status ?></h5>
                     <img src="img/<?= $image ?>" class="card-img-top vh-40">
                     <div class="card-body">
                         <h3 class="card-text text-success font-weight-bold"><?= $name ?> <span></span></h3>

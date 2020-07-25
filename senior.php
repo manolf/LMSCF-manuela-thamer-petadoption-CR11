@@ -1,4 +1,25 @@
-<?php require_once 'actions/db_connect.php'; ?>
+<?php
+ob_start();
+session_start();
+require_once 'actions/db_connect.php';
+
+// if session is not set this will redirect to login page
+// if (isset($_SESSION["superadmin"])) {
+//     header("Location: superadmin.php");
+//     exit;
+// }
+// if (isset($_SESSION["admin"])) {
+//     header("Location: admin.php");
+//     exit;
+// }
+if (!isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit;
+}
+// select logged-in users details
+$res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['user']);
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,11 +34,23 @@
 
     <!-- bootstrap version -->
     <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div>
+            <p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p>
+        </div>
 
         <div class="mx-auto">
-            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-            <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-            <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
+            <a class="btn btn-outline-success" href="home.php" role="button">Home</a>
+            <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
+
+
+
+        </div>
+
+        <div class="mr-3 text-white">
+            <?php echo $userRow['userEmail']; ?>
+        </div>
+        <div class="image">
+            <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
         </div>
     </nav>
 
@@ -31,7 +64,7 @@
     <nav class="navbar navbar-dark bg-white">
 
 <div class="mx-left">
-    <a class="btn btn-outline-success" href="index.php" role="button">All</a>
+    <a class="btn btn-outline-success" href="home.php" role="button">All</a>
     <a class="btn btn-outline-success" href="general.php" role="button">Small and Big Animals</a>
     <a class="btn btn-outline-success" href="senior.php" role="button">Senior Animals</a>
 </div>
@@ -43,7 +76,7 @@
         <?php
         $sql = "SELECT * FROM animals
         INNER JOIN address on address.addressID = animals.addressID
-        WHERE age >= 8";
+        WHERE age >= 8 and `status` = 'available'";
 
         //nicer version
         $result = mysqli_query($conn, $sql);
@@ -62,7 +95,7 @@
 
             <div class="col mb-3 ">
                 <div class="card px-1 py-1 bg-light">
-                    <h5 class="card-title text-secondary"><?= $type ?></h5>
+                    <h5 class="card-title text-secondary"></h5>
                     <img src="img/<?= $image ?>" class="card-img-top vh-40">
                     <div class="card-body">
                         <h3 class="card-text text-success font-weight-bold"><?= $name ?> <span></span></h3>
@@ -75,9 +108,7 @@
 
                     </div>
                     <div class="card-footer text-center">
-                        <!-- <a href="delete.php?book_id=<?= $animalID ?>" class="btn btn-outline-danger  mx-auto">Delete medium</a>
-                <a href="update.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Update medium</a> -->
-                        <a href="adopt.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Meet <?= $name ?> </a>
+                        <a href="adopt.php?id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Meet <?= $name ?> </a>
                     </div>
                 </div>
             </div>

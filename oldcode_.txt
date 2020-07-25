@@ -307,3 +307,163 @@ mysqli_close($conn);
     <script src="js/main.js"></script>
 
     <!-- <?php ob_end_flush(); ?> -->
+
+    <!-- <?php 
+    require_once 'db_conn6.php';
+
+    $sql = "SELECT * FROM users";
+    $res = $connect->query($sql);
+?> -->
+
+
+
+// old updateUser
+
+<?php 
+
+require_once 'actions/db_connect.php';
+
+echo "updateUser.php";
+
+if(isset($_POST['submit'])){
+ echo   $id = $_POST['id'];
+
+  echo  $userName = $_POST['userName'];
+ echo   $status = $_POST['status'];
+
+    $sql = "UPDATE user SET userName='$userName', 'status' ='$status' WHERE userId= $id ";
+
+    if($conn->query($sql) === TRUE)
+    {
+        echo "<center><h3>succesfuly updated </h3></center>";
+        header("refresh:1 url=home.php");
+    } else {
+        echo "error ";
+    }
+}
+
+$conn->close();
+
+?>
+
+
+//
+<!-- 
+
+                <input type="hidden" name="id" value="<?= $row['userId'] ?>">
+                <label>User Name</label>
+                <input type="text" name="userName" value="<?= $row['userName'] ?>">
+                <label>Position</label>
+                <input type="text" name="position" value="<?= $row['position'] ?>">
+                <input type="submit" name="submit" class="btn btn-info">
+            </form> -->
+
+
+            
+        // Bind to the submit event of our form // *>identification id of form = trigger event
+        $("#submit").submit(function(event) {
+
+            // Prevent default posting of form - put here to work in case of errors
+            event.preventDefault();
+
+            // Abort any pending request
+            if (request) {
+                request.abort();
+            }
+            // setup some local variables
+            var $form = $(this); // * refferes to the id used = submit
+
+            console.log($form); //just for testing
+
+            // Let's select and cache all the fields
+            var $inputs = $form.find("input, select, button, textarea"); // *all tags covered - adjustable
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize(); // * selects elements refers to $_POST method
+
+            // Let's disable the inputs for the duration of the Ajax request.
+            // Note: we disable elements AFTER the form data has been serialized.
+            // Disabled form elements will not be serialized.
+            $inputs.prop("disabled", true);
+
+            // Fire off the request to /form.php
+            request = $.ajax({
+                url: "addUser.php", // * refers to the usual action method
+                type: "post", // * rferes to the usual method named post
+                data: serializedData // * holds key and value
+            });
+
+            // Callback handler that will be called on success
+            request.done(function(response, textStatus, jqXHR) {
+                // Log a message to the console
+                console.log("Success! User added!");
+                console.log(response); // double check that
+                readInfo();
+                //document.getElementById("result").innerHTML =response;
+            });
+
+            // Callback handler that will be called on failure
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: " +
+                    textStatus, errorThrown
+                );
+            });
+
+            // Callback handler that will be called regardless
+            // if the request failed or succeeded
+            request.always(function() {
+                // Reenable the inputs
+                $inputs.prop("disabled", false);
+            });
+
+
+
+                        // setup some local variables
+            var $form = $(this); // * refferes to the id used = submit
+
+            console.log($form); //just for testing
+
+            // Let's select and cache all the fields
+            var $inputs = $form.find("input, select, button, textarea"); // *all tags covered - adjustable
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize(); // * selects elements refers to $_POST method
+
+            // Let's disable the inputs for the duration of the Ajax request.
+            // Note: we disable elements AFTER the form data has been serialized.
+            // Disabled form elements will not be serialized.
+            $inputs.prop("disabled", true);
+
+            // Fire off the request to /form.php
+            request = $.ajax({
+                url: "addUser.php", // * refers to the usual action method
+                type: "post", // * rferes to the usual method named post
+                data: serializedData // * holds key and value
+            });
+
+            // Callback handler that will be called on success
+            request.done(function(response, textStatus, jqXHR) {
+                // Log a message to the console
+                console.log("Success! User added!");
+                console.log(response); // double check that
+                readInfo();
+                //document.getElementById("result").innerHTML =response;
+            });
+
+            // Callback handler that will be called on failure
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: " +
+                    textStatus, errorThrown
+                );
+            });
+
+            // Callback handler that will be called regardless
+            // if the request failed or succeeded
+            request.always(function() {
+                // Reenable the inputs
+                $inputs.prop("disabled", false);
+            });

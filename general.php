@@ -13,11 +13,23 @@
 
     <!-- bootstrap version -->
     <nav class="navbar sticky-top navbar-dark bg-dark">
+        <div>
+            <p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p>
+        </div>
 
         <div class="mx-auto">
-            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-            <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-            <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
+            <a class="btn btn-outline-success" href="home.php" role="button">Home</a>
+            <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
+
+
+
+        </div>
+
+        <div class="mr-3 text-white">
+            <?php echo $userRow['userEmail']; ?>
+        </div>
+        <div class="image">
+            <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
         </div>
     </nav>
 
@@ -29,7 +41,7 @@
     </div>
 
 <div class="mx-left">
-    <a class="btn btn-outline-success" href="index.php" role="button">All</a>
+    <a class="btn btn-outline-success" href="home.php" role="button">All</a>
     <a class="btn btn-outline-success" href="general.php" role="button">Small and Big Animals</a>
     <a class="btn btn-outline-success" href="senior.php" role="button">Senior Animals</a>
 </div>
@@ -40,8 +52,8 @@
         <?php
         $sql = "SELECT * FROM animals
         INNER JOIN address on address.addressID = animals.addressID
-        where animals.type in ('large','small');
-        ";
+        where animals.type in ('large','small') and `status`= 'available'";
+
 
         //nicer version
         $result = mysqli_query($conn, $sql);
@@ -73,9 +85,7 @@
 
                     </div>
                     <div class="card-footer text-center">
-                        <!-- <a href="delete.php?book_id=<?= $animalID ?>" class="btn btn-outline-danger  mx-auto">Delete medium</a>
-                <a href="update.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Update medium</a> -->
-                        <a href="adopt.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Meet <?= $name ?> </a>
+                        <a href="adopt.php?id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Meet <?= $name ?> </a>
                     </div>
                 </div>
             </div>

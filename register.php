@@ -4,6 +4,12 @@ session_start(); // start a new session or continues the previous
 if (isset($_SESSION['user']) != "") {
    header("Location: home.php"); // redirects to home.php
 }
+if (isset($_SESSION['admin']) != "") {
+   header("Location: admin.php"); // redirects to home.php
+}
+if (isset($_SESSION['superadmin']) != "") {
+   header("Location: superadmin.php"); // redirects to home.php
+}
 include_once 'actions/db_connect.php';
 $error = false;
 if (isset($_POST['btn-signup'])) {
@@ -153,7 +159,7 @@ if (isset($_POST['btn-signup'])) {
 
 
 
-               <input type="email" name="email" class="form-control" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+               <input type="email" name="email" class="form-control mt-2 mb-2" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
 
                <span class="text-danger"> <?php echo  $emailError; ?> </span>
 
@@ -187,6 +193,14 @@ if (isset($_POST['btn-signup'])) {
       <div class="parallax_section1 parallax_image">
       </div>
       <!--END PARALLAX-->
+
+      <nav class="navbar navbar-light bg-dark">
+
+<div class="mx-auto">
+<h2 class="text-success">(c) manolf 2020 @ codefactory </h2>
+
+</div>
+</nav>
 
    </div>
 

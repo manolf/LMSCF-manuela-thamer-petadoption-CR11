@@ -53,7 +53,10 @@ if (isset($_POST['btn-login'])) {
       if ($row["status"] == 'admin') {
         $_SESSION["admin"] = $row["userId"];
         header("Location: admin.php");
-      } else {
+      } elseif ($row["status"] == 'superadmin'){
+        $_SESSION['superadmin'] = $row['userId'];
+        header("Location: superadmin.php");
+      }else{
         $_SESSION['user'] = $row['userId'];
         header("Location: home.php");
       }
@@ -175,10 +178,10 @@ if (isset($_POST['btn-login'])) {
 
 
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-dark">
 
       <div class="mx-auto">
-      <h2 class="text-success">(c) manolf 2020 </h2>
+      <h2 class="text-success">(c) manolf 2020 @ codefactory </h2>
 
       </div>
     </nav>

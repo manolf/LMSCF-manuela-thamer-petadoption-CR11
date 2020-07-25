@@ -32,17 +32,28 @@ if ($_GET['id']) {
 <head>
    <title >Delete </title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="navbar sticky-top navbar-light bg-light">
-        
-        <div class= "mx-auto">
-                <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-                <a class="btn btn-outline-success" href="create.php" role="button">Add Medium</a>
-                <a class="btn btn-outline-success" href="create.php" role="button">Add Author</a>
-                <a class="btn btn-outline-success" href="create.php" role="button">Add Publisher</a>
+<nav class="navbar sticky-top navbar-dark bg-dark">
+        <div><p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p></div>
+
+        <div class="mx-auto">
+            <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
+            <a class="btn btn-outline-warning" href="create.php" role="button">Add Animal</a>
+            <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
         </div>
-        </nav>
+
+        <div class="mr-3 text-white">
+            <?php echo $userRow['userEmail']; ?>
+        </div>
+        <div class="image">
+            <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
+        </div>
+    </nav>
+
+
+<hr>
 
 <h3>Do you really want to delete this card?</h3>
 <form action ="actions/a_delete.php" method="post">
