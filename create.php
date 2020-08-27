@@ -112,7 +112,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
 
-                    <input class="form-control btn btn-outline-success mt-3 mb-3" type="submit" name="submit" value="Insert Medium" />
+                    <input class="form-control btn btn-outline-success mt-3 mb-3" type="submit" name="submit" value="Add Animal Record" />
 
                     <a href="admin.php" class="btn btn-block btn-outline-warning">Back</a>
 

@@ -97,7 +97,7 @@ if (isset($_POST['btn-signup'])) {
    <title>Login & Registration System</title>
    <meta http-equiv="Content-Type" charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="style1.css" />
+   <link rel="stylesheet" type="text/css" href="style2.css" />
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -126,7 +126,7 @@ if (isset($_POST['btn-signup'])) {
       </div>
       <!--END PARALLAX-->
 
-      <div class="parallax_section2 parallax_image">
+      <div class="parallax_section2 help parallax_image">
 
          <div class="row ">
 

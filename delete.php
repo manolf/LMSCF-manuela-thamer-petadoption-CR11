@@ -55,13 +55,16 @@ if ($_GET['id']) {
 
 <hr>
 
-<h3>Do you really want to delete this card?</h3>
+<h3 class="text-center">Do you really want to delete this card?</h3>
+
+<div class="text-center">
 <form action ="actions/a_delete.php" method="post">
 
    <input type="hidden" name= "animalID" value="<?php echo $data['animalID'] ?>" />
-   <button type="submit">Yes, delete it!</button >
+   <button type="submit" class="text-center">Yes, delete it!</button >
    <a href="admin.php"><button type="button">No, go back!</button ></a>
 </form>
+</div>
 
 </body>
 </html>

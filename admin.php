@@ -26,8 +26,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Title Page-->
     <title>Admin Page</title>

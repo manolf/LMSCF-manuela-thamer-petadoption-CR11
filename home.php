@@ -27,6 +27,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 <head>
     <title>Welcome - <?php echo $userRow['userEmail']; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
@@ -62,24 +63,28 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
     <nav class="navbar navbar-dark bg-white">
 
+
         <div class="mx-left">
             <a class="btn btn-outline-success" href="home.php" role="button">All</a>
             <a class="btn btn-outline-success" href="general.php" role="button">Small and Big Animals</a>
             <a class="btn btn-outline-success" href="senior.php" role="button">Senior Animals</a>
         </div>
 
+
         <div>
             <form>
-                <p class="text-success">SEARCH</p>
+                <p class="text-success">SEARCH by Name </p>
                 <input type="text" name="search" id="search">
             </form>
 
-            <p id="result"></p>
+
         </div>
     </nav>
+    <p id="result"></p>
 
     <!-- <div class="container autos row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
-    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto">
+    <div class="container row row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-col-xs-1 mx-auto">
+        <!-- <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto">-->
 
         <?php
         $sql = "SELECT * FROM animals
@@ -101,7 +106,7 @@ INNER JOIN address on address.addressID = animals.addressID
 
         ?>
 
-            <div class="col mb-3 ">
+            <div class="col">
                 <div class="card px-1 py-1 bg-light">
                     <h5 class="card-title text-secondary"><?= $status ?></h5>
                     <img src="img/<?= $image ?>" class="card-img-top vh-40">

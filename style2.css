@@ -1,12 +1,14 @@
+/*for register-card'*/
 body {
-  font-family: "Roboto", sans-serif; }
-
-.foto{
- width: 50%;
- height: 50%;
+  font-family: "Roboto", sans-serif;
 }
 
-.icon{
+.foto {
+  width: 50%;
+  height: 50%;
+}
+
+.icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -18,41 +20,45 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: 100% auto;
-  position: relative; }
+  position: relative;
+}
 
 .parallax_section2 {
-  height: 350px;
+  height: 600px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: 200% auto;
-  position: relative; }
+  position: relative;
+}
 
 .parallax_image {
-  background-image: url(img/parallax.jpg); 
+  background-image: url(img/parallax.jpg);
   background-size: 100% 100%;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .card:hover {
-  transform: scale(1.05); }
+  transform: scale(1.05);
+}
 
 .card {
   margin: 20px 10px 20px 10px;
   padding: 20px 20px 20px 20px;
   transition: all 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   width: 30%;
 }
 
-.login{
+.login {
   border-radius: 10%;
 }
-.formular:hover{
+.formular:hover {
   transform: scale(1.05);
 }
 
@@ -60,26 +66,18 @@ body {
   margin: 20px 10px 20px 10px;
   padding: 20px 20px 20px 20px;
   transition: all 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
-  width: 30%;
-
-}
-
-
-.card {
-  margin: 20px 10px 20px 10px;
-  padding: 20px 20px 20px 20px;
-  transition: all 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
   width: 30%;
 }
 
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
 
-@media (max-width: 576px){
-
-.card{
-  width: 100%;
+  .formular {
+    width: 100%;
+  }
 }
 
-}
-
+/*# sourceMappingURL=styles1.css.map */

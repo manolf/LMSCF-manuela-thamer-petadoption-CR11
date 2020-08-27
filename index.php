@@ -6,6 +6,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pet Adoption</title>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -40,16 +41,19 @@
 
 <div>
             <form>
-                <p class="text-success">SEARCH</p>
+                <p class="text-success">SEARCH by Name </p>
                 <input type="text" name="search" id="search">
             </form>
 
-            <p id="result"></p>
+          
         </div>
 </nav>
-
-    <!-- <div class="container autos row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
-    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto">
+<p id="result"></p>
+  
+<!-- <div class="container row col-lg-4 col-md-6 col-xs-12 mx-auto"> -->
+<!-- <div class="container row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
+<div class="container row row-cols-md-2 row-cols-sm-2 row-cols-lg-3 row-col-xs-1 mx-auto">
+    <!-- <div class="container row row-cols-md-2 row-cols-lg-3 row-cols-xs-1 mx-auto"> -->
 
         <?php
         $sql = "SELECT * FROM animals
@@ -71,7 +75,8 @@
 
         ?>
 
-            <div class="col mb-3 ">
+            <div class="col">
+            <!-- <div class="col mb-3 "> -->
                 <div class="card px-1 py-1 bg-light">
                     <h5 class="card-title text-secondary"><?= $status ?></h5>
                     <img src="img/<?= $image ?>" class="card-img-top vh-40">
@@ -86,8 +91,8 @@
 
                     </div>
                     <div class="card-footer text-center">
-                        <!-- <a href="delete.php?book_id=<?= $animalID ?>" class="btn btn-outline-danger  mx-auto">Delete medium</a>
-                <a href="update.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Update medium</a> -->
+                        <!-- <a href="delete.php?book_id=<#?= $animalID ?>" class="btn btn-outline-danger  mx-auto">Delete medium</a>
+                <a href="update.php?book_id=<#?= $animalID ?>" class="btn btn-outline-success mx-auto">Update medium</a> -->
                         <a href="adopt.php?book_id=<?= $animalID ?>" class="btn btn-outline-success mx-auto">Meet <?= $name ?> </a>
                     </div>
                 </div>
@@ -168,8 +173,8 @@
                 document.getElementById("result").innerHTML = "";
             }
             // search => 
-            // Let's disable the inputs for the duration of the Ajax request.
-            // Note: we disable elements AFTER the form data has been serialized.
+            // disable the inputs for the duration of the Ajax request.
+            // Note: disable elements AFTER the form data has been serialized.
             // Disabled form elements will not be serialized.
 
         });
